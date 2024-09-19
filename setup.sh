@@ -7,7 +7,7 @@ mkdir ~/exam
 cat > ~/exam/switch.yaml << EOF
 ovs:
   switches:
-    - name: SWITCH_NAME
+    - name: dsw-host
       ports:
         - name: tapXXX
           type: OVSPort
@@ -17,10 +17,6 @@ ovs:
           type: OVSPort
           vlan_mode: access
           tag: VLAN_ID_Y
-        - name: tapZZZ
-          type: OVSPort
-          vlan_mode: trunk
-          trunks: [VLAN_ID_X, VLAN_ID_Y]
 EOF
 
 cd ~/exam
@@ -50,7 +46,7 @@ EOF
 
 $HOME/masters/scripts/lab-startup.py lab.yaml
 
-cat > ~/exam/exam.yaml << EOF
+cat > ~/exam/enp0s1.yaml << EOF
 network:
   version: 2
   ethernets:
@@ -72,3 +68,4 @@ network:
           - 172.16.0.2
           - 2001:678:3fc:3::2
 EOF
+
