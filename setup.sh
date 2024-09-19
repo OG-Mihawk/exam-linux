@@ -4,7 +4,7 @@ mkdir ~/vm
 ln -s ~/masters/scripts ~/vm/
 
 mkdir ~/exam
-cat EOF > ~/exam/switch.yaml
+cat > ~/exam/switch.yaml << EOF
 ovs:
   switches:
     - name: SWITCH_NAME
@@ -27,7 +27,7 @@ cd ~/exam
 
 $HOME/masters/scripts/switch-conf.py switch.yaml
 
-cat EOF > ~/exam/lab.yaml
+cat > ~/exam/lab.yaml << EOF
 kvm:
   vms:
     - vm_name: server
@@ -50,8 +50,7 @@ EOF
 
 $HOME/masters/scripts/lab-startup.py lab.yaml
 
-
-cat EOF > ~/exam/exam.txt
+cat > ~/exam/exam.yaml << EOF
 network:
   version: 2
   ethernets:
