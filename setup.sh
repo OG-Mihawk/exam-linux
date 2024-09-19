@@ -27,7 +27,7 @@ cat > ~/exam/lab.yaml << EOF
 kvm:
   vms:
     - vm_name: server
-      master_image: debian-VERSION-amd64.qcow2 # master image to be used
+      master_image: debian-testing-amd64.qcow2 # master image to be used
       force_copy: true/false # force copy the master image to the VM image
       memory: 2048 # memory in MB
       tapnum: <tap interface number>
@@ -38,7 +38,7 @@ kvm:
             size: 32G # size of the disk
             bus: <scsi|virtio|nvme> # bus type
     - vm_name: client
-      master_image: debian-VERSION-amd64.qcow2 # master image to be used
+      master_image: debian-testing-amd64.qcow2 # master image to be used
       force_copy: true/false # force copy the master image to the VM image
       memory: 2048 # memory in MB
       tapnum: <tap interface number>
