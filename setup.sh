@@ -30,21 +30,21 @@ $HOME/masters/scripts/switch-conf.py switch.yaml
 cat EOF > ~/exam/lab.yaml
 kvm:
   vms:
-    - vm_name: <a virtual machin file name>
+    - vm_name: server
       master_image: debian-VERSION-amd64.qcow2 # master image to be used
       force_copy: true/false # force copy the master image to the VM image
-      memory: <memory in MB>
+      memory: 2048 # memory in MB
       tapnum: <tap interface number>
       devices:
         storage:
-          - dev_name: <supplemental disk file name with its extension to set format>
+          - dev_name: second_disk.qcow2 # device name
             type: disk
             size: 32G # size of the disk
             bus: <scsi|virtio|nvme> # bus type
-    - vm_name: <another virtual machine file name>
+    - vm_name: client
       master_image: debian-VERSION-amd64.qcow2 # master image to be used
       force_copy: true/false # force copy the master image to the VM image
-      memory: <memory in MB>
+      memory: 2048 # memory in MB
       tapnum: <tap interface number>
 EOF
 
